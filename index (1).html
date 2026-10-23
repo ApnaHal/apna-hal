@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="اپنا حل — پاکستان میں روزمرہ معلومات، موبائل پیکجز، بلوں کی رہنمائی، سرکاری اسکیموں کے اصل لنکس اور مفید کیلکولیٹر۔">
+<title>اپنا حل | Apna Hal</title>
+<style>
+:root{--green:#117a45;--deep:#075b35;--mint:#e9f7ef;--ink:#15251c;--muted:#607067;--line:#dce8e0;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f6faf7;color:var(--ink);line-height:1.7}
+a{color:var(--green)}.wrap{width:min(1080px,92%);margin:auto}
+header{background:linear-gradient(125deg,#075b35,#159653);color:white;padding:26px 0 34px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:28px;font-weight:800}.brand small{display:block;font-size:13px;font-weight:400;opacity:.9}
+.pill{border:1px solid #ffffff70;border-radius:999px;padding:6px 12px;font-size:13px}
+.hero{padding:28px 0 8px;max-width:720px}.hero h1{font-size:clamp(27px,5vw,43px);line-height:1.35;margin:0 0 12px}.hero p{margin:0 0 18px;color:#e5f5eb}
+.search{display:flex;gap:8px;background:white;padding:6px;border-radius:14px;max-width:600px}.search input{flex:1;min-width:0;border:0;outline:0;padding:12px;font-size:16px;font-family:inherit}.search button{background:var(--green);color:white;border:0;border-radius:10px;padding:10px 18px;font-size:15px}
+main{padding:28px 0 45px}.notice{background:#fff7df;border:1px solid #f0dfab;border-radius:14px;padding:12px 15px;margin-bottom:24px;font-size:14px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:25px 0 13px}.section-head h2{margin:0;font-size:22px}.section-head p{margin:0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat( auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 4px 15px #163d2410}
+.icon{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:var(--mint);font-size:24px;margin-bottom:9px}
+.card h3{margin:0 0 5px;font-size:18px}.card p{margin:0 0 12px;color:var(--muted);font-size:14px}.link{display:inline-flex;align-items:center;gap:6px;font-weight:bold;text-decoration:none}.link:hover{text-decoration:underline}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.tool input{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;margin:5px 0 10px;font:inherit}.tool button{background:var(--green);color:white;border:0;border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer}.result{font-weight:bold;color:var(--deep);margin-top:8px}
+footer{background:#10281b;color:#e3f0e7;padding:25px 0;font-size:13px}footer a{color:#b9edca}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.small{font-size:12px;color:var(--muted)}
+@media(max-width:520px){.search button{padding:9px 12px}.brand{font-size:24px}.card{padding:15px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="top"><div class="brand">اپنا حل <small>Apna Hal · آسان معلومات، ایک جگہ</small></div><span class="pill">پاکستان کے لیے اردو معلوماتی پورٹل</span></div>
+  <div class="hero">
+   <h1>آپ کے روزمرہ سوالات کا آسان حل</h1>
+   <p>موبائل پیکجز، بلوں کی رہنمائی، سرکاری معلومات اور مفید ٹولز — سادہ اردو میں۔</p>
+   <form class="search" onsubmit="event.preventDefault();filterCards();">
+    <input id="searchInput" type="search" placeholder="یہاں تلاش کریں، مثلاً موبائل یا بل..." aria-label="ویب سائٹ پر تلاش">
+    <button type="submit">تلاش کریں</button>
+   </form>
+  </div>
+ </div>
+</header>
+<main class="wrap">
+ <div class="notice"><strong>اہم اطلاع:</strong> یہ معلوماتی ویب سائٹ ہے، سرکاری ویب سائٹ نہیں۔ سرکاری اسکیم، انعام یا مالی مدد کے لیے صرف متعلقہ ادارے کی اصل ویب سائٹ سے تصدیق کریں۔ ہم شناختی کارڈ، پاس ورڈ یا بینک کی معلومات نہیں مانگتے۔</div>
+ <div class="section-head"><h2>مقبول معلومات</h2><p>اصل اور قابلِ اعتماد ذرائع استعمال کریں</p></div>
+ <div class="grid" id="cards">
+  <article class="card" data-key="بجلی بل بجلی کا بل آن لائن">
+   <div class="icon">⚡</div><h3>بجلی کا بل کیسے دیکھیں؟</h3>
+   <p>اپنے بجلی فراہم کرنے والے ادارے کی ویب سائٹ یا بل پر درج معلومات استعمال کریں۔</p>
+   <a class="link" href="https://bill.pitc.com.pk/" target="_blank" rel="noopener noreferrer">بل دیکھنے کے پورٹل پر جائیں ↗</a>
+  </article>
+  <article class="card" data-key="گیس بل سوئی گیس بل">
+   <div class="icon">🔥</div><h3>گیس کے بل کی رہنمائی</h3>
+   <p>اپنے علاقے کے متعلقہ گیس ادارے کے اصل پورٹل سے بل اور تفصیلات چیک کریں۔</p>
+   <a class="link" href="https://www.sngpl.com.pk/" target="_blank" rel="noopener noreferrer">SNGPL کی ویب سائٹ ↗</a>
+   <p class="small">اگر آپ کا فراہم کنندہ SSGC ہے تو اس کی سرکاری ویب سائٹ استعمال کریں۔</p>
+   <a class="link" href="https://www.ssgc.com.pk/" target="_blank" rel="noopener noreferrer">SSGC کی ویب سائٹ ↗</a>
+  </article>
+  <article class="card" data-key="سرکاری اسکیم احساس امداد انعام حکومت تصدیق">
+   <div class="icon">🏛️</div><h3>سرکاری اسکیموں کی تصدیق</h3>
+   <p>کسی بھی امداد یا اسکیم کی خبر شیئر کرنے سے پہلے سرکاری ذریعے سے تصدیق کریں۔</p>
+   <a class="link" href="https://www.pass.gov.pk/" target="_blank" rel="noopener noreferrer">BISP / سماجی تحفظ کی معلومات ↗</a>
+  </article>
+  <article class="card" data-key="موبائل پیکج جاز زونگ یوفون ٹیلی نار">
+   <div class="icon">📱</div><h3>موبائل پیکجز</h3>
+   <p>اپنے نیٹ ورک کے اصل پیکجز، قیمت اور مدت کی تصدیق کمپنی کی ویب سائٹ سے کریں۔</p>
+   <a class="link" href="https://jazz.com.pk/" target="_blank" rel="noopener noreferrer">Jazz ↗</a> ·
+   <a class="link" href="https://www.zong.com.pk/" target="_blank" rel="noopener noreferrer">Zong ↗</a> ·
+   <a class="link" href="https://www.ufone.com/" target="_blank" rel="noopener noreferrer">Ufone ↗</a>
+  </article>
+  <article class="card" data-key="شناختی کارڈ نادرا شناخت تصدیق">
+   <div class="icon">🪪</div><h3>شناختی کارڈ سے متعلق معلومات</h3>
+   <p>شناختی کارڈ کی خدمات اور تازہ ہدایات صرف نادرا کے اصل ذرائع سے حاصل کریں۔</p>
+   <a class="link" href="https://www.nadra.gov.pk/" target="_blank" rel="noopener noreferrer">نادرا کی ویب سائٹ ↗</a>
+  </article>
+  <article class="card" data-key="سولر بجلی بچت حساب کیلکولیٹر">
+   <div class="icon">☀️</div><h3>بجلی خرچ کا کیلکولیٹر</h3>
+   <p>اپنے استعمال کے یونٹس اور فی یونٹ تخمینی قیمت سے سادہ حساب لگائیں۔</p>
+   <a class="link" href="#calculator">کیلکولیٹر کھولیں ↓</a>
+  </article>
+ </div>
+ <div class="section-head"><h2>مفت کیلکولیٹر</h2><p>یہ صرف تخمینہ ہے، اصل بل مختلف ہو سکتا ہے</p></div>
+ <div class="tools" id="calculator">
+  <section class="card tool">
+   <div class="icon">🧮</div><h3>بجلی کے خرچ کا اندازہ</h3>
+   <label for="units">ماہانہ یونٹس</label><input id="units" type="number" min="0" max="100000" placeholder="مثلاً 250">
+   <label for="rate">فی یونٹ تخمینی قیمت (روپے)</label><input id="rate" type="number" min="0" max="100000" step="0.01" placeholder="مثلاً 50">
+   <button onclick="calcBill()">حساب لگائیں</button><div id="billResult" class="result" aria-live="polite"></div>
+   <p class="small">ٹیکس، فکسڈ چارجز، سلیب اور دیگر فیس شامل نہیں ہیں۔</p>
+  </section>
+  <section class="card tool">
+   <div class="icon">🔎</div><h3>اصل معلومات کیسے پہچانیں؟</h3>
+   <p>کسی اسکیم یا انعام کی خبر پر یقین کرنے سے پہلے ادارے کا سرکاری ڈومین، تاریخ، شرائط اور معتبر اعلان چیک کریں۔</p>
+   <p><strong>یاد رکھیں:</strong> کسی نامعلوم لنک پر شناختی کارڈ، OTP، پاس ورڈ یا بینک تفصیلات نہ دیں۔</p>
+  </section>
+ </div>
+ <div class="section-head"><h2>ہم سے رابطہ</h2><p>اپنا ای میل یہاں شامل کریں</p></div>
+ <section class="card">
+  <p>غلطی کی نشاندہی یا معلومات کی تجویز بھیجنے کے لیے اپنا رابطہ ای میل شامل کریں۔</p>
+  <p><strong>ای میل:</strong> <span style="color:#607067">یہاں اپنا کاروباری ای میل درج کریں</span></p>
+  <p class="small">شائع کرنے سے پہلے اپنا رابطہ ای میل، رازداری کی پالیسی اور استعمال کی شرائط شامل کریں۔</p>
+ </section>
+</main>
+<footer><div class="wrap foot"><div><strong>اپنا حل | Apna Hal</strong><br>روزمرہ معلومات، آسان اردو میں۔</div><div>یہ سرکاری ویب سائٹ نہیں۔ تمام سرکاری خدمات متعلقہ اداروں کے ذریعے فراہم ہوتی ہیں۔<br>© <span id="year"></span> Apna Hal</div></div></footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+function filterCards(){const q=document.getElementById('searchInput').value.trim().toLowerCase();document.querySelectorAll('#cards .card').forEach(c=>{const t=(c.innerText+' '+(c.dataset.key||'')).toLowerCase();c.style.display=(!q||t.includes(q))?'':'none';});}
+function calcBill(){const u=Number(document.getElementById('units').value),r=Number(document.getElementById('rate').value),out=document.getElementById('billResult');if(!Number.isFinite(u)||!Number.isFinite(r)||u<0||r<0||document.getElementById('units').value===''||document.getElementById('rate').value===''){out.textContent='براہِ کرم یونٹس اور فی یونٹ قیمت درج کریں۔';return;}out.textContent='تخمینی خرچ: '+(u*r).toLocaleString('en-PK',{maximumFractionDigits:2})+' روپے';}
+</script>
+</body>
+</html>
